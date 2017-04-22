@@ -21,4 +21,20 @@
     return self;
 }
 
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [super encodeRestorableStateWithCoder:coder];
+
+    [coder encodeInteger:self.dataOffset forKey:@"dataOffset"];
+
+    NSLog(@"DataController::encodeWithCoder");
+}
+
+- (void)restoreStateWithCoder:(NSCoder *)coder
+{
+    [super restoreStateWithCoder:coder];
+
+    self.dataOffset = [coder decodeIntegerForKey:@"dataOffset"];
+}
+
 @end

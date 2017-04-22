@@ -47,7 +47,7 @@
 
     [super encodeRestorableStateWithCoder:coder];
 
-    [coder encodeObject:self.dataController forKey:@"dataController"];
+    [self.dataController encodeRestorableStateWithCoder:coder];
 }
 
 - (void)restoreStateWithCoder:(NSCoder *)coder
@@ -56,7 +56,7 @@
 
     [super restoreStateWithCoder:coder];
 
-    self.dataController = [coder decodeObjectForKey:@"dataController"];
+    [self.dataController restoreStateWithCoder:coder];
 }
 
 @end

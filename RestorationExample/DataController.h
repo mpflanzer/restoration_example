@@ -6,9 +6,9 @@
 //  Copyright © 2017 Moritz Pflanzer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
-@interface DataController : NSObject
+@interface DataController : NSResponder
 
 @property NSInteger dataOffset;
 
